@@ -8,11 +8,11 @@ function gameStart() {
   initBoard();
   console.log('Welcome to Tic-Tac-Toe!')
   console.log('Moves are made as numbers:');
-  console.log(' 1 | 2 | 3');
+  console.log(' 0 | 1 | 2');
   console.log(' ---------');
-  console.log(' 4 | 5 | 6');
+  console.log(' 3 | 4 | 5');
   console.log(' ---------');
-  console.log(' 7 | 8 | 9');
+  console.log(' 6 | 7 | 8');
   console.log(' ---------');
   var gameInProgress = true;
   
@@ -21,12 +21,21 @@ function gameStart() {
     printBoard();
     // prompt for move with player
 
-    var move = prompt(`Player ${playerTurn}, choose your move: `);
+    var move = parseInt(prompt(`Player ${playerTurn}, choose your move: `));
     // Make the move and redisplay the board
 
+    if (move >= 0 && move <= 2) {
+      board[0][move] = playerTurn;
+    } else if (move <= 5) {
+      board[1][move - 3] = playerTurn;
+    } else if (move <= 8) {
+      board[2][move - 6] = playerTurn;
+    } else {
+      console.log("ILLEGAL MOVE!!");
+    }
     // If win, 
     // gameInProgress = false;
-
+    
     // Switch turns
     playerTurn = (playerTurn === 'X') ? 'O' : 'X';
   }
