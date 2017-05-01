@@ -1,7 +1,7 @@
 var prompt = require('prompt-sync')();
 
 var board;
-
+var playerTurn = 'X';
 gameStart();
 
 function gameStart() {
@@ -19,12 +19,16 @@ function gameStart() {
   while(gameInProgress) {
     // Display the board
     printBoard();
-    // prompt for move
-    var move = prompt('Choose your move:');
+    // prompt for move with player
+
+    var move = prompt(`Player ${playerTurn}, choose your move: `);
     // Make the move and redisplay the board
 
     // If win, 
     // gameInProgress = false;
+
+    // Switch turns
+    playerTurn = (playerTurn === 'X') ? 'O' : 'X';
   }
 }
 
