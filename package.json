@@ -1,0 +1,27 @@
+{
+  "name": "tic-tac-toe",
+  "version": "1.0.0",
+  "bin": {
+    "tic-tac-toe": "./index.js"
+  },
+  "description": "",
+  "main": "tic-tac-toe.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eddiechou/tic-tac-toe.git"
+  },
+  "author": "Eddie Chou",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/eddiechou/tic-tac-toe/issues"
+  },
+  "homepage": "https://github.com/eddiechou/tic-tac-toe#readme",
+  "dependencies": {
+    "prompt": "^1.0.0",
+    "prompt-sync": "^4.1.4"
+  }
+}
