@@ -18,9 +18,9 @@ function gameStart() {
   
   while(gameInProgress) {
     // Display the board
-
+    printBoard();
     // prompt for move
-    promptForMove();
+    var move = prompt('Choose your move:');
     // Make the move and redisplay the board
 
     // If win, 
@@ -30,26 +30,23 @@ function gameStart() {
 
 function initBoard() {
   // 0 = nothing, 1 = 'X', -1 = 'O'
-  board = [[0,0,0],[0,0,0],[0,0,0]];
+  board = [[' ',' ',' '],[' ',' ',' '],[' ',' ',' ']];
 }
 
-function promptForMove() {
-  // Prompt with whose turn it is
-
-
-  var schema = {
-      properties: {
-        move: {
-          required: true
-        }
+function printBoard() {
+  // For each row
+  console.log('Current board: ');
+  for (var i = 0; i < board.length; i++) {
+    // For each column
+    for (var j = 0; j < board.length; j++) {
+      process.stdout.write(board[i][j]);
+      if (j < board.length - 1) {
+        process.stdout.write(" | ");
       }
-    };
-  var move = prompt('Choose your move:');
-  console.log('selected move: ', move);
+    }
+    console.log('');
+    if (i < board.length - 1) {
+      console.log('---------');
+    }
+  }
 }
-
- 
-  // 
-  // Get two properties from the user: username and email 
-  // 
-  
